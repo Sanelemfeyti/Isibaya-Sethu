@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is'baya Sethu - Honoring Tradition, Delivering Tomorrow</title>
+
+    <link rel="canonical" href="https://www.isbaya-sethu.com">
+
+    <meta name="description" content="Is'baya Sethu offers professional and culturally sensitive delivery of healthy cows and goats for traditional ceremonies, events, and processed meat in Inanda, Durban.">
+    <meta name="keywords" content="Is'baya Sethu, livestock Durban, cows for traditional ceremonies, goats for funerals, processed meat Durban, Inanda livestock, cultural livestock delivery, healthy livestock">
+
+    <meta property="og:title" content="Is'baya Sethu - Honoring Tradition, Delivering Tomorrow">
+    <meta property="og:description" content="Professional and culturally sensitive delivery of healthy cows, goats, and processed meat for traditional ceremonies in Shongweni, Durban.">
+    <meta property="og:image" content="https://i.ibb.co/8LRFMz4M/IMG-20250712-WA0005.jpg"> 
+    <meta property="og:url" content="https://www.isbaya-sethu.com"> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Is'baya Sethu - Honoring Tradition, Delivering Tomorrow">
+    <meta name="twitter:description" content="Professional and culturally sensitive delivery of healthy cows, goats, and processed meat for traditional ceremonies in Inanda, Durban.">
+    <meta name="twitter:image" content="https://i.ibb.co/8LRFMz4M/IMG-20250712-WA0005.jpg"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Cyberpunk Custom Colors */
+        :root {
+            --color-cyber-dark-blue: #0A0E1A;
+            --color-neon-cyan: #00F0FF;
+            --color-neon-pink: #FF4081;
+            --color-text-light: #C0C0C0;
+            --color-text-muted: #808080;
+            --color-border-grey: #4A4A4A;
+        }
+
+        .bg-cyber-dark-blue { background-color: var(--color-cyber-dark-blue); }
+        .text-cyber-dark-blue { color: var(--color-cyber-dark-blue); }
+        .bg-neon-cyan { background-color: var(--color-neon-cyan); }
+        .text-neon-cyan { color: var(--color-neon-cyan); }
+        .bg-neon-pink { background-color: var(--color-neon-pink); }
+        .text-neon-pink { color: var(--color-neon-pink); }
+        .bg-text-light { background-color: var(--color-text-light); }
+        .text-text-light { color: var(--color-text-light); }
+        .bg-text-muted { background-color: var(--color-text-muted); }
+        .text-text-muted { color: var(--color-text-muted); }
+        .border-border-grey { border-color: var(--color-border-grey); }
+
+        /* Custom fonts */
+        .font-cyber-head { font-family: 'Orbitron', sans-serif; }
+        .font-cyber-body { font-family: 'Inter', sans-serif; }
+
+        /* Global styles */
+        html { scroll-behavior: smooth; }
+        body { overflow-x: hidden; }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100dvh; /* Optimized for modern browsers */
+        }
+        
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover; /* FIXED: Changed from auto to cover */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero-slide {
+                background-attachment: scroll; /* Keep this to prevent parallax on mobile */
+                background-position: center center;
+                background-size: cover; /* FIXED: Changed from auto to cover */
+            }
+        }
+
+        /* Section Reveal Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            filter: blur(5px);
+            transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInDownCyber {
+            from { opacity: 0; transform: translateY(-40px) scale(0.9); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        @keyframes fadeInUpCyber {
+            from { opacity: 0; transform: translateY(40px) scale(0.9); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        @keyframes fadeInCyber {
+            from { opacity: 0; filter: blur(10px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 5px var(--color-neon-cyan); }
+            50% { box-shadow: 0 0 20px var(--color-neon-cyan), 0 0 30px var(--color-neon-pink); }
+            100% { box-shadow: 0 0 5px var(--color-neon-cyan); }
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        @keyframes scanline {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        .animate-fade-in-down-cyber { animation: fadeInDownCyber 1.2s ease-out forwards; }
+        .animate-fade-in-up-cyber { animation: fadeInUpCyber 1.2s ease-out forwards; }
+        .animate-fade-in-delay-cyber { animation: fadeInCyber 1.5s ease-out 0.8s forwards; opacity: 0; }
+        .animate-neon-pulse { animation: neonPulse 2s infinite alternate ease-in-out; }
+        
+        /* Neon Button Styling */
+        .btn-neon {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--color-neon-cyan);
+            color: var(--color-neon-cyan);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 8px var(--color-neon-cyan);
+        }
+        .btn-neon:hover {
+            color: var(--color-cyber-dark-blue);
+            background-color: var(--color-neon-cyan);
+            box-shadow: 0 0 25px var(--color-neon-cyan), 0 0 50px var(--color-neon-pink);
+            transform: scale(1.05);
+        }
+        .btn-neon.fill-btn {
+            background-color: var(--color-neon-cyan);
+            color: var(--color-cyber-dark-blue);
+        }
+        .btn-neon.fill-btn:hover {
+            background-color: var(--color-neon-pink);
+            box-shadow: 0 0 25px var(--color-neon-pink), 0 0 50px var(--color-neon-cyan);
+        }
+
+        /* Nav Bar adjustments */
+        .nav-scrolled {
+            background-color: var(--color-cyber-dark-blue);
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border-grey);
+        }
+        
+        /* Hero Overlay */
+        .hero-overlay-cyber {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle, transparent 20%, var(--color-cyber-dark-blue) 80%),
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 1px,
+                    transparent 1px,
+                    transparent 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+            background-size: cover, cover, 100% 4px, 4px 100%;
+            animation: scanline 8s infinite linear alternate;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        /* Icons with Cyberpunk flair */
+        .icon-cyber-glow {
+            filter: drop-shadow(0 0 8px var(--color-neon-cyan));
+            transition: filter 0.3s ease-in-out;
+        }
+        .icon-cyber-glow:hover {
+            filter: drop-shadow(0 0 15px var(--color-neon-pink)) drop-shadow(0 0 25px var(--color-neon-cyan));
+        }
+
+        /* Testimonial card glow on hover */
+        .testimonial-card-cyber:hover {
+            box-shadow: 0 0 15px var(--color-neon-cyan);
+            border-color: var(--color-neon-cyan);
+        }
+        .testimonial-card-cyber {
+            border: 1px solid var(--color-border-grey);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Map Glitch Overlay */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 20;
+            animation: glitch 0.5s infinite alternate;
+            opacity: 0.1;
+        }
+
+        /* Catalog Styles */
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(10, 14, 26, 0.8);
+            border-radius: 10px;
+            border: 1px solid var(--color-neon-cyan);
+            width: 300px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+            border-color: var(--color-neon-pink);
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--color-neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+        }
+        .desc {
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            color: var(--color-text-light);
+            min-height: 60px;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--color-neon-pink);
+        }
+        .wa-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: var(--color-neon-cyan);
+            color: var(--color-cyber-dark-blue);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .wa-btn:hover {
+            background-color: var(--color-neon-pink);
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-cyber-body text-text-light bg-cyber-dark-blue">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-cyber-dark-blue bg-opacity-90 shadow-lg z-50 p-4 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-neon-cyan font-cyber-head text-2xl md:text-3xl font-bold tracking-wider">Is'baya Sethu</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">About Us</a>
+                <a href="#services" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">Services</a>
+                <a href="#catalog" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">Catalog</a>
+                <a href="#director" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">Director</a>
+                <a href="#testimonials" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">Testimonials</a>
+                <a href="#contact" class="text-text-light hover:text-neon-cyan transition-colors duration-300 transform hover:scale-105">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-neon-cyan focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-cyber-dark-blue text-text-light mt-4 border-t border-border-grey">
+            <a href="#about" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">About Us</a>
+            <a href="#services" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">Services</a>
+            <a href="#catalog" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">Catalog</a>
+            <a href="#director" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">Director</a>
+            <a href="#testimonials" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">Testimonials</a>
+            <a href="#contact" class="block py-3 px-4 hover:bg-neon-cyan hover:text-cyber-dark-blue transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-4 overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="hero-slide active absolute inset-0" style="background-image: url('https://i.ibb.co/1xXC0jf/happy-black-man-portrait-and-animals-in-farming-agriculture-or-sustainability-in-the.jpg');" role="img" aria-label="Is'baya Sethu's director proudly standing near cattle on a green pasture in Inanda, Durban"></div>
+                <div class="hero-slide absolute inset-0" style="background-image: url('https://i.ibb.co/kVT4Q15Z/Cattle-farming-114122762.jpg');" role="img" aria-label="Reliable livestock transport for traditional Zulu ceremonies across KwaZulu-Natal"></div>
+                <div class="hero-slide absolute inset-0" style="background-image: url('https://i.ibb.co/S7NFPb2k/farm-animal-cows-cattle-farmer-600nw-2239225985.jpg');" role="img" aria-label="Healthy Zulu cattle standing in a traditional kraal, ready for cultural use"></div>
+            </div>
+
+            <div class="hero-overlay-cyber"></div>
+
+            <div class="relative z-20 text-text-light">
+                <h1 class="font-cyber-head text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-down-cyber text-neon-cyan drop-shadow-[0_0_15px_rgba(0,240,255,0.7)]">
+                    Is'baya Sethu
+                </h1>
+                <p class="font-cyber-body text-xl md:text-2xl lg:text-3xl mb-8 animate-fade-in-up-cyber text-text-light drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                    Honoring Tradition, Delivering Tomorrow
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#catalog" class="btn-neon fill-btn inline-block font-cyber-head font-semibold px-8 py-3 rounded-full shadow-lg animate-fade-in-delay-cyber">
+                        View Catalog
+                    </a>
+                    <a href="#contact" class="btn-neon inline-block font-cyber-head font-semibold px-8 py-3 rounded-full shadow-lg animate-fade-in-delay-cyber">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 bg-cyber-dark-blue px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-8 text-neon-cyan drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">About Us</h2>
+                <p class="font-cyber-body text-lg leading-relaxed text-text-light">
+                    Is'baya Sethu is a proudly rural-based livestock enterprise rooted in Inanda, Durban.
+                    We deliver livestock with professionalism, empathy, and cultural sensitivity, understanding the profound
+                    significance of each animal for funerals, weddings, ancestral rites, and other traditional ceremonies.
+                    Our commitment is to provide healthy, culturally appropriate livestock with seamless logistics,
+                    honoring traditions with every delivery.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-24 bg-cyber-dark-blue px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-12 text-neon-cyan text-center drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-text-muted bg-opacity-10 p-8 rounded-lg shadow-lg text-center transform transition duration-300 hover:scale-105 reveal-on-scroll border border-border-grey testimonial-card-cyber">
+                        <svg class="h-16 w-16 text-neon-cyan mx-auto mb-6 icon-cyber-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657m11.314 0A8.06 8.06 0 0122 10c0-4.418-3.582-8-8-8a8.06 8.06 0 00-7.071 3.536M4 10c0 4.418 3.582 8 8 8a8.06 8.06 0 007.071-3.536M6.343 16.657L1 12m1.428-8.283a4 4 0 015.656 0M4.05 4.05L7.9 7.9M1.05 12.05L4.9 15.9"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z"></path></svg>
+                        <h3 class="font-cyber-head text-2xl font-semibold mb-4 text-neon-cyan">Live Animal Delivery</h3>
+                        <p class="font-cyber-body text-text-light leading-relaxed">
+                            Direct delivery of healthy, culturally appropriate cows and goats. Ideal for funerals,
+                            weddings, ancestral rites, and other significant events. We handle full logistics, ensuring
+                            the animals arrive safely and respectfully at your desired location.
+                        </p>
+                    </div>
+                    <div class="bg-text-muted bg-opacity-10 p-8 rounded-lg shadow-lg text-center transform transition duration-300 hover:scale-105 reveal-on-scroll border border-border-grey testimonial-card-cyber">
+                        <svg class="h-16 w-16 text-neon-cyan mx-auto mb-6 icon-cyber-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+                        <h3 class="font-cyber-head text-2xl font-semibold mb-4 text-neon-cyan">Processed Cow Delivery</h3>
+                        <p class="font-cyber-body text-text-light leading-relaxed">
+                            We offer professional slaughter, hygienic packaging, and delivery of high-quality
+                            processed meat (approximately 120–150kg meat per cow). Our team handles all cold-chain
+                            logistics, ensuring the meat arrives fresh and ready for your traditional feasts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="py-16 md:py-24 bg-cyber-dark-blue px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-12 text-neon-cyan text-center drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Livestock Catalog</h2>
+                <div class="catalog">
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="goat1">
+                            <img src="https://i.ibb.co/CKBvbDgk/1752276750293.jpg" class="active" alt="Healthy Boer Goat for Sale in Inanda Durban, 2 years old" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Boer Goat – 2 years</div>
+                            <div class="desc">Healthy male Boer goat, ideal for breeding or traditional ceremonies.</div>
+                            <div class="price">R2,200</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Boer%20Goat%20(2%20years)%20for%20R1,200" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="goat2">
+                            <img src="https://i.ibb.co/CKBvbDgk/1752276750293.jpg" class="active" alt="Nubian Doe for Milk Production or Ceremonial Use in KwaZulu-Natal, 18 months" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Nubian Doe – 18 months</div>
+                            <div class="desc">Purebred Nubian doe, great for milk production or ceremonial use.</div>
+                            <div class="price">R2,000</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Nubian%20Doe%20(18%20months)%20for%20R1,000" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="goat3">
+                            <img src="https://i.ibb.co/CKBvbDgk/1752276750293.jpg" class="active" alt="Mixed breed young goat kid for small gatherings, 6 months old" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Mixed Breed Kid – 6 months</div>
+                            <div class="desc">Friendly young kid, suitable for raising or small traditional gatherings.</div>
+                            <div class="price">R2,000</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Mixed%20Breed%20Kid%20(6%20months)%20for%20R600" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="goat4">
+                            <img src="https://i.ibb.co/CKBvbDgk/1752276750293.jpg" class="active" alt="Saanen dairy goat with high milk yield, 3 years old, available in Durban" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Saanen Doe – 3 years</div>
+                            <div class="desc">High-yielding Saanen dairy goat, excellent for milk or specific cultural needs.</div>
+                            <div class="price">R2,800</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Saanen%20Doe%20(3%20years)%20for%20R1,000" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="cow1">
+                            <img src="https://i.ibb.co/m5mGq0yP/1752253742139.jpg" class="active" alt="Holstein Dairy Heifer ready to calve, 1 year old, for sale near Inanda" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Holstein Heifer – 1 year</div>
+                            <div class="desc">Healthy Holstein dairy heifer, soon to calve, suitable for milk production.</div>
+                            <div class="price">R15,900</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Holstein%20Heifer%20(1%20year)%20for%20R5,000" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="cow2">
+                            <img src="https://i.ibb.co/m5mGq0yP/1752253742139.jpg" class="active" alt="Jersey Cow, good milker, 2 years old, perfect for traditional events" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Jersey Cow – 2 years</div>
+                            <div class="desc">Good milker with a gentle temperament, ideal for dairy or traditional use.</div>
+                            <div class="price">R25,500</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Jersey%20Cow%20(2%20years)%20for%20R4,500" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="cow3">
+                            <img src="https://i.ibb.co/m5mGq0yP/1752253742139.jpg" class="active" alt="Purebred Angus Bull, strong build for breeding or processed meat, 3 years old" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Angus Bull – 3 years</div>
+                            <div class="desc">Purebred Angus bull, strong build, excellent for breeding or meat production.</div>
+                            <div class="price">R20,000</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Angus%20Bull%20(3%20years)%20for%20R4,000" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal-on-scroll">
+                        <div class="carousel" id="cow4">
+                            <img src="https://i.ibb.co/m5mGq0yP/1752253742139.jpg" class="active" alt="Docile Brown Swiss Cow, excellent milk producer for cultural ceremonies, 4 years" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="title">Brown Swiss Cow – 4 years</div>
+                            <div class="desc">Excellent milk producer, docile, perfect for dairy or traditional ceremonies.</div>
+                            <div class="price">R20,800</div>
+                            <a class="wa-btn" href="https://wa.me/+27815231096?text=Interested%20in%20Brown%20Swiss%20Cow%20(4%20years)%20for%20R4,800" target="_blank">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="director" class="py-16 md:py-24 bg-cyber-dark-blue px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="https://i.ibb.co/0y65Wc7b/2025050515260368.png" alt="Sanele Mbhele, Director of Is'baya Sethu and livestock entrepreneur in Inanda" class="rounded-full shadow-lg w-64 h-64 md:w-full md:h-auto object-cover mx-auto md:mx-0 border-4 border-neon-cyan reveal-on-scroll animate-neon-pulse">
+                </div>
+                <div class="md:w-2/3 text-center md:text-left reveal-on-scroll">
+                    <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-4 text-neon-cyan drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Meet the Director</h2>
+                    <h3 class="font-cyber-head text-2xl font-semibold mb-4 text-neon-pink"> Sanele Mbhele </h3>
+                    <p class="font-cyber-body text-lg leading-relaxed text-text-light mb-4">
+                        Our director is an award-winning entrepreneur with a deep passion for livestock and community development.
+                        Trained extensively in animal production, he brings both professional expertise and profound cultural understanding
+                        to Is'baya Sethu.
+                    </p>
+                    <p class="font-cyber-body text-lg leading-relaxed text-text-light">
+                        Known for his commitment to youth empowerment and extensive community service in the Inanda area,
+                        our director ensures every interaction is handled with integrity, respect, and a genuine connection
+                        to the cultural significance of our services.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 md:py-24 bg-cyber-dark-blue px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-12 text-neon-cyan drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-text-muted bg-opacity-10 p-6 rounded-lg shadow-md reveal-on-scroll testimonial-card-cyber">
+                        <p class="font-cyber-body text-lg italic text-text-light mb-4">
+                            "Is'baya Sethu provided excellent service for our family's traditional ceremony.
+                            The livestock was healthy and delivered with the utmost respect and punctuality. Highly recommended!"
+                        </p>
+                        <p class="font-cyber-head text-neon-pink font-semibold">- Thandiwe M., Durban</p>
+                    </div>
+                    <div class="bg-text-muted bg-opacity-10 p-6 rounded-lg shadow-md reveal-on-scroll testimonial-card-cyber">
+                        <p class="font-cyber-body text-lg italic text-text-light mb-4">
+                            "The processed meat delivery was fantastic! Hygienically packed and delivered right on time for our stokvel.
+                            Their professionalism and attention to detail are unmatched."
+                        </p>
+                        <p class="font-cyber-head text-neon-pink font-semibold">- Sibusiso N., Shongweni</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-16 md:py-24 bg-neon-cyan text-cyber-dark-blue text-center px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-6">Ready to Experience Professional & Culturally Sensitive Service?</h2>
+                <p class="font-cyber-body text-xl leading-relaxed mb-8">
+                    Contact Is'baya Sethu today for your requirements. We're here to serve your needs with dedication and respect.
+                </p>
+                <a href="#contact" class="inline-block bg-cyber-dark-blue text-neon-cyan font-cyber-head font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-neon-pink hover:text-cyber-dark-blue transform hover:scale-105 transition duration-300">
+                    Get Your Quote Today
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-cyber-dark-blue text-text-light px-4 reveal-on-scroll border-t border-border-grey">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="font-cyber-head text-3xl md:text-4xl font-bold mb-8 text-neon-cyan drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Get in Touch</h2>
+                <p class="font-cyber-body text-lg leading-relaxed mb-8">
+                    Whether you need livestock for a special occasion or have any questions, we're here to assist you with professionalism and cultural understanding.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-6 md:space-y-0 mb-12">
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-neon-cyan icon-cyber-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <span class="font-cyber-body text-xl text-text-light">081 523 1096</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-neon-cyan icon-cyber-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 13a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v14z"></path></svg>
+                        <span class="font-cyber-body text-xl text-text-light">Sanele.mfeyti.9@gmail.com</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/27815231096" target="_blank" class="btn-neon fill-btn inline-block font-cyber-head font-semibold px-10 py-4 rounded-full shadow-lg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="inline-block w-6 h-6 mr-3">
+                    Order via WhatsApp
+                </a>
+
+                <div class="mt-16">
+                    <h3 class="font-cyber-head text-2xl font-bold mb-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">Our Location in Inanda</h3>
+                    <div class="map-container relative">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11082.932149591963!2d30.938743149999998!3d-29.74205565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef703f889989d2d%3A0xc6651a5c68f18546!2sInanda%2C%20eThekwini!5e0!3m2!1sen!2sza!4v1700460395678!5m2!1sen!2sza"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-lg shadow-lg border border-border-grey">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-cyber-dark-blue text-text-muted py-8 text-center border-t border-border-grey">
+        <div class="container mx-auto">
+            <p>© 2025 Is'baya Sethu. All rights reserved. | Rooted in Inanda, Durban.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu.classList.contains('block')) {
+                    mobileMenu.classList.remove('block');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('block');
+        });
+
+        // Hero Image Carousel
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Start carousel after 5 seconds, then every 5 seconds
+        setInterval(nextSlide, 5000);
+        showSlide(currentSlide); // Show the first slide initially
+
+        // Section Reveal Animations on Scroll
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Sticky Nav Bar on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // Preload the next hero image
+        function preloadNextImage() {
+            const nextIndex = (currentSlide + 1) % slides.length;
+            const nextSlide = slides[nextIndex];
+            if (nextSlide && nextSlide.style.backgroundImage) {
+                const bgImage = nextSlide.style.backgroundImage;
+                const imageUrl = bgImage.replace(/url\(['"]?([^'"]*)['"]?\)/i, '$1');
+                
+                const img = new Image();
+                img.src = imageUrl;
+            }
+        }
+        
+        // Preload next image when slide changes
+        setInterval(preloadNextImage, 4500);
+
+        // Catalog Carousel Functionality - FIXED to handle single images
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            
+            // Only set up rotation if there are multiple images
+            if (images.length > 1) {
+                let index = 0;
+                setInterval(() => {
+                    images[index].classList.remove('active');
+                    index = (index + 1) % images.length;
+                    images[index].classList.add('active');
+                }, 3000);
+            }
+        });
+
+    </script>
+</body>
+</html>
